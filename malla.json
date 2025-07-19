@@ -1,0 +1,55 @@
+[
+  {
+    "año": "Primer Año",
+    "semestres": [
+      {
+        "semestre": "1er Semestre",
+        "asignaturas": [
+          { "nombre": "Introducción al Cálculo", "codigo": "MA1001" },
+          { "nombre": "Introducción al Álgebra", "codigo": "MA1101" },
+          { "nombre": "Introducción a la Física Clásica", "codigo": "FI1000" },
+          { "nombre": "Herramientas Computacionales para Ing. y Ciencias", "codigo": "CC1000" },
+          { "nombre": "Desafíos de Innovación en Ing. y Ciencias", "codigo": "CD1100" },
+          { "nombre": "Aplicaciones de la Biología a la Ing. y Ciencias", "codigo": "BT1211" }
+        ]
+      },
+      {
+        "semestre": "2do Semestre",
+        "asignaturas": [
+          { "nombre": "Cálculo Diferencial e Integral", "codigo": "MA1002", "req": ["MA1001"] },
+          { "nombre": "Álgebra Lineal", "codigo": "MA1102", "req": ["MA1101"] },
+          { "nombre": "Introducción a la Física Moderna", "codigo": "FI1100", "req": ["FI1000"] },
+          { "nombre": "Introducción a la Programación", "codigo": "CC1002", "req": ["CC1000"] },
+          { "nombre": "Proyecto de Innovación en Ing. y Ciencias", "codigo": "CD1201", "req": ["CD1100"] },
+          { "nombre": "Formación General", "codigo": "CFG" }
+        ]
+      }
+    ]
+  },
+  {
+    "año": "Segundo Año",
+    "semestres": [
+      {
+        "semestre": "3er Semestre",
+        "asignaturas": [
+          { "nombre": "Cálculo en Varias Variables", "codigo": "MA2001", "req": ["MA1002", "MA1102"] },
+          { "nombre": "Ecuaciones Diferenciales Ordinarias", "codigo": "MA2601", "req": ["MA1002", "MA1102"] },
+          { "nombre": "Mecánica", "codigo": "FI2001", "req": ["FI1000", "MA1001"] },
+          { "nombre": "Métodos Experimentales", "codigo": "FI2003", "req": ["FI1000"] },
+          { "nombre": "Química", "codigo": "IQ2211" }
+        ]
+      },
+      {
+        "semestre": "4to Semestre",
+        "asignaturas": [
+          { "nombre": "Economía", "codigo": "IN2201", "req": ["MA1001"] },
+          { "nombre": "Cálculo Avanzado y Aplicaciones", "codigo": "MA2002", "req": ["MA2001", "MA2601"] },
+          { "nombre": "Electromagnetismo", "codigo": "FI2002", "req": ["FI1100", "MA2001"] },
+          { "nombre": "Termodinámica", "codigo": "FI2004", "req": ["MA1002", "IQ2211"] },
+          { "nombre": "Módulo Interdisciplinario", "codigo": "CD2201", "req": ["CD1201"] },
+          { "nombre": "Formación General", "codigo": "CFG2" }
+        ]
+      }
+    ]
+  }
+]
