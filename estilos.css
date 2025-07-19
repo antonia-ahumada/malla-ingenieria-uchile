@@ -1,4 +1,4 @@
-/* estilos.css (Actualizado con diseño responsive) */
+/* estilos.css (Versión corregida y final) */
 
 body {
   font-family: 'Poppins', sans-serif;
@@ -68,6 +68,7 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
+  flex-wrap: wrap; /* Permite que los años se ajusten si no caben */
   gap: 30px;
   padding: 20px;
   width: 100%;
@@ -81,8 +82,9 @@ body {
   border-radius: 20px;
   padding: 20px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  width: 100%;
-  max-width: 500px;
+  /* CORRECCIÓN: Usamos flexbox para que crezca y se encoja */
+  flex: 1;
+  min-width: 450px; /* Ancho mínimo para que quepan dos semestres */
 }
 
 .año-titulo {
@@ -107,9 +109,9 @@ body {
   border: none;
   border-radius: 10px;
   padding: 15px;
-  width: 100%;
   box-shadow: none;
-  flex-shrink: 0;
+  /* CORRECCIÓN CLAVE: En vez de un ancho fijo, le decimos que comparta el espacio */
+  flex: 1; 
 }
 
 .trimestre h2 {
@@ -194,39 +196,46 @@ body {
 }
 
 /* ================================================= */
-/* === NUEVO: ESTILOS RESPONSIVE PARA MÓVILES === */
+/* === ESTILOS RESPONSIVE PARA MÓVILES (Corregidos) === */
 /* ================================================= */
 
-@media (max-width: 900px) {
-  /* Apila los años verticalmente */
+@media (max-width: 950px) { /* Ajustado el punto de quiebre */
   .malla-grid {
       flex-direction: column;
-      align-items: center; /* Centra los años verticalmente */
+      align-items: center;
       gap: 25px;
+  }
+
+  .año-wrapper {
+      min-width: 90%; /* Que ocupe casi todo el ancho */
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 500px) {
   body {
-      padding: 10px; /* Menos espacio en los bordes */
+      padding: 10px;
   }
 
   .header-container {
-      flex-direction: column; /* Apila el título y el botón */
+      flex-direction: column;
       gap: 15px;
       padding: 15px;
       text-align: center;
   }
   
   .titulo-principal {
-      font-size: 2em; /* Título un poco más pequeño */
+      font-size: 2em;
   }
 
+  .año-wrapper {
+      min-width: 95%;
+      padding: 15px;
+  }
+  
   .año-titulo {
-      font-size: 1.5em; /* Título del año más pequeño */
+      font-size: 1.5em;
   }
 
-  /* Apila los semestres uno sobre otro */
   .semestres-wrapper {
       flex-direction: column;
       gap: 15px;
