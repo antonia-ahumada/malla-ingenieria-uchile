@@ -1,8 +1,7 @@
-/* estilos.css (Actualizado con tonos morados) */
+/* estilos.css (Actualizado con diseño responsive) */
 
 body {
   font-family: 'Poppins', sans-serif;
-  /* FONDO: Gradiente con tonos morados y lilas */
   background: linear-gradient(120deg, #4e2b6c, #a4508b);
   background-attachment: fixed;
   color: #333;
@@ -29,7 +28,6 @@ body {
 
 .titulo-principal {
   font-family: 'Lobster', cursive;
-  /* LETRA: Título principal en blanco */
   color: #fff;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
   margin: 0;
@@ -40,7 +38,6 @@ body {
 .subtitulo {
   font-family: 'Poppins', sans-serif;
   font-size: 1em;
-  /* LETRA: Subtítulo en un lila muy claro */
   color: #e6e6fa;
   margin: 5px 0 0 0;
   font-weight: 700;
@@ -51,9 +48,8 @@ body {
   padding: 10px 18px;
   font-family: 'Poppins', sans-serif;
   font-size: 0.9em;
-  /* BOTÓN: Tono orquídea/lila */
   background-color: #d8bfd8;
-  color: #4a148c; /* Texto del botón en morado oscuro */
+  color: #4a148c;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -74,20 +70,22 @@ body {
   align-items: flex-start;
   gap: 30px;
   padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .año-wrapper {
-  /* CAJA PRINCIPAL: Translúcido con un leve tinte lila */
   background: rgba(230, 220, 240, 0.15);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 20px;
   padding: 20px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 500px;
 }
 
 .año-titulo {
-  /* LETRA: Título del año en blanco */
   color: #fff;
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
@@ -105,19 +103,16 @@ body {
 }
 
 .trimestre {
-  /* CAJA SEMESTRE: Translúcido un poco más oscuro */
   background: rgba(0, 0, 0, 0.2);
   border: none;
   border-radius: 10px;
   padding: 15px;
-  min-width: 220px;
-  max-width: 220px;
+  width: 100%;
   box-shadow: none;
   flex-shrink: 0;
 }
 
 .trimestre h2 {
-  /* LETRA: Título del semestre en blanco */
   color: #fff;
   margin-top: 0;
   margin-bottom: 15px;
@@ -128,7 +123,6 @@ body {
 }
 
 .asignatura {
-  /* ASIGNATURA: Fondo lila claro, texto oscuro */
   background: #f3e5f5;
   color: #311b92;
   margin: 8px 0;
@@ -152,7 +146,6 @@ body {
 }
 
 .asignatura.aprobada {
-  /* APROBADA: Color orquídea oscuro, letra blanca */
   background: #9b59b6;
   color: white;
   text-decoration: line-through;
@@ -160,14 +153,12 @@ body {
 }
 
 .asignatura:hover:not(.bloqueado):not(.aprobada) {
-  /* HOVER: Un lila más intenso */
   background-color: #d1c4e9;
   transform: scale(1.03);
 }
 
 .tooltip {
   font-size: 0.8em;
-  /* Requisito en un morado más suave */
   color: #7b1fa2;
   margin-top: 5px;
   font-style: italic;
@@ -177,7 +168,6 @@ body {
 .footer-creditos {
     margin-top: 40px;
     font-size: 0.9em;
-    /* LETRA: Créditos en lila claro */
     color: #e6e6fa;
 }
 
@@ -185,7 +175,6 @@ body {
   position: fixed;
   width: 10px;
   height: 10px;
-  /* CHISPAS: Tono dorado/orquídea */
   background-color: #da70d6;
   border-radius: 50%;
   pointer-events: none;
@@ -201,5 +190,45 @@ body {
   to {
     transform: translate(var(--x), var(--y)) scale(0);
     opacity: 0;
+  }
+}
+
+/* ================================================= */
+/* === NUEVO: ESTILOS RESPONSIVE PARA MÓVILES === */
+/* ================================================= */
+
+@media (max-width: 900px) {
+  /* Apila los años verticalmente */
+  .malla-grid {
+      flex-direction: column;
+      align-items: center; /* Centra los años verticalmente */
+      gap: 25px;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+      padding: 10px; /* Menos espacio en los bordes */
+  }
+
+  .header-container {
+      flex-direction: column; /* Apila el título y el botón */
+      gap: 15px;
+      padding: 15px;
+      text-align: center;
+  }
+  
+  .titulo-principal {
+      font-size: 2em; /* Título un poco más pequeño */
+  }
+
+  .año-titulo {
+      font-size: 1.5em; /* Título del año más pequeño */
+  }
+
+  /* Apila los semestres uno sobre otro */
+  .semestres-wrapper {
+      flex-direction: column;
+      gap: 15px;
   }
 }
